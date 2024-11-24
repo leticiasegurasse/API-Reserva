@@ -78,36 +78,47 @@ __Reservas__
 ## 📂 Estrutura de Arquivos
 ```
 src/
+│── config/
+│   └── database.ts                # Configuração do banco de dados
 │
 ├── controllers/
-│   ├── usuarioController.js       # Controlador de usuários
-│   ├── experienciaController.js   # Controlador de experiências
-│   ├── avaliacaoController.js     # Controlador de avaliações
-│   └── reservaController.js       # Controlador de reservas
+│   ├── usuarioController.ts       # Controlador de usuários
+│   ├── experienciaController.ts   # Controlador de experiências
+│   ├── avaliacaoController.ts     # Controlador de avaliações
+│   └── reservaController.ts       # Controlador de reservas
 │
 ├── models/
-│   ├── usuarioModel.js            # Model para operações no banco relacionadas a usuários
-│   ├── experienciaModel.js        # Model para operações no banco relacionadas a experiências
-│   ├── avaliacaoModel.js          # Model para operações no banco relacionadas a avaliações
-│   └── reservaModel.js            # Model para operações no banco relacionadas a reservas
-│
-├── services/
-│   ├── usuarioService.js          # Lógica de negócios para usuários
-│   ├── experienciaService.js      # Lógica de negócios para experiências
-│   ├── avaliacaoService.js        # Lógica de negócios para avaliações
-│   └── reservaService.js          # Lógica de negócios para reservas
-│
-├── config/
-│   └── database.js                # Configuração do banco de dados
+│   ├── usuarioModel.ts            # Model para operações no banco relacionadas a usuários
+│   ├── experienciaModel.ts        # Model para operações no banco relacionadas a experiências
+│   ├── avaliacaoModel.ts          # Model para operações no banco relacionadas a avaliações
+│   └── reservaModel.ts            # Model para operações no banco relacionadas a reservas
 │
 ├── routes/
-│   ├── usuarioRoutes.js           # Rotas relacionadas a usuários
-│   ├── experienciaRoutes.js       # Rotas relacionadas a experiências
-│   ├── avaliacaoRoutes.js         # Rotas relacionadas a avaliações
-│   └── reservaRoutes.js           # Rotas relacionadas a reservas
+│   ├── usuarioRoutes.ts           # Rotas relacionadas a usuários
+│   ├── experienciaRoutes.ts       # Rotas relacionadas a experiências
+│   ├── avaliacaoRoutes.ts         # Rotas relacionadas a avaliações
+│   └── reservaRoutes.ts           # Rotas relacionadas a reservas
+│
+├── services/
+│   ├── usuarioService.ts          # Lógica de negócios para usuários
+│   ├── experienciaService.ts      # Lógica de negócios para experiências
+│   ├── avaliacaoService.ts        # Lógica de negócios para avaliações
+│   └── reservaService.ts          # Lógica de negócios para reservas
+│
+├── utils/
+│    └── normalizeText.ts          # Normalizador de texto
 │
 └── app.js                         # Configuração principal do servidor
 ```
+## Explicação do uso dos Omits
+- Omit<Avaliacao, "idAvaliacao"> cria um tipo que é igual ao tipo Avaliacao, mas sem a propriedade idAvaliacao. Isso é usado porque o idAvaliacao é gerado automaticamente na função com uuidv7(), então não precisa ser fornecido ao chamar a função. Assim, o parâmetro data aceita apenas as outras propriedades de Avaliacao, garantindo clareza e segurança no código.
+
+- Omit<Experiencia, "idExperiencia"> cria um tipo que é igual ao tipo Experiencia, mas sem a propriedade idExperiencia. Isso é feito porque o idExperiencia é gerado automaticamente dentro da função usando uuidv7(), então quem chama a função não precisa informar essa propriedade. O parâmetro data aceita apenas as outras propriedades de Experiencia, garantindo que a função seja mais simples e segura de usar.
+
+- Omit<Reserva, "idReserva"> cria um tipo baseado no tipo Reserva, mas exclui a propriedade idReserva. Isso é porque o idReserva é gerado automaticamente dentro da função usando uuidv7(). Assim, o parâmetro data só precisa conter as outras propriedades de Reserva, simplificando a chamada da função e garantindo que o idReserva seja tratado internamente, evitando inconsistências ou erros.
+
+- Omit<Usuario, "idUsuario"> cria um tipo baseado no tipo Usuario, mas sem a propriedade idUsuario. Isso acontece porque o idUsuario é gerado automaticamente dentro da função usando uuidv7(). Dessa forma, o parâmetro data deve conter apenas as outras propriedades de Usuario, enquanto a função cuida de adicionar o idUsuario, garantindo simplicidade e segurança na criação de usuários.
+
 
 ## 📝 Feito por
 - __Leticia Segurasse__
