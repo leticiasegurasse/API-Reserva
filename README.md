@@ -1,4 +1,8 @@
 # API-Reserva
+##Bem-vindo à API de Reserva de Experiências! 🎉
+
+Esta API foi projetada para gerenciar reservas, avaliações, usuários e experiências de forma eficiente e escalável. O sistema é ideal para aplicações que desejam fornecer uma experiência personalizada e dinâmica para seus usuários, permitindo a exploração e o agendamento de atividades únicas. Com uma arquitetura bem estruturada e endpoints organizados, a API facilita o desenvolvimento de frontends interativos e robustos.
+
 ## 📋 Funcionalidades
 - __CRUD de Usuários:__ Gerenciamento de usuários com endpoints para criar, ler, atualizar e deletar.
 - __Gerenciamento de Experiências:__ Recursos para buscar, criar, atualizar e deletar experiências.
