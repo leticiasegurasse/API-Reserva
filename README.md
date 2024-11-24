@@ -1,4 +1,4 @@
-📋 Funcionalidades
+##📋 Funcionalidades
 __CRUD de Usuários:__ Gerenciamento de usuários com endpoints para criar, ler, atualizar e deletar.
 __Gerenciamento de Experiências:__ Recursos para buscar, criar, atualizar e deletar experiências.
 __Sistema de Avaliações:__ Permite criar e visualizar avaliações associadas a experiências e usuários.
