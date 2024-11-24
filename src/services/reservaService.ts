@@ -31,7 +31,6 @@ export const criarReserva = async (data: {
     );
   }
 
-  // Validação de usuário e experiência via Model
   const { usuarioExiste, experienciaExiste } =
     await reservaModel.validarUsuarioEExperiencia(
       data.usuarioId,
