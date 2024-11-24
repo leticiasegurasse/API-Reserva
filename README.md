@@ -1,7 +1,7 @@
 # API-Reserva
 ## Bem-vindo à API de Reserva de Experiências! 🎉
 
-Esta API foi projetada para gerenciar reservas, avaliações, usuários e experiências de forma eficiente e escalável. O sistema é ideal para aplicações que desejam fornecer uma experiência personalizada e dinâmica para seus usuários, permitindo a exploração e o agendamento de atividades únicas. Com uma arquitetura bem estruturada e endpoints organizados, a API facilita o desenvolvimento de frontends interativos e robustos.
+Esta API foi projetada para gerenciar __reservas, avaliações, usuários e experiências__ de forma eficiente e escalável. O sistema é ideal para aplicações que desejam fornecer uma experiência personalizada e dinâmica para seus usuários, permitindo a exploração e o agendamento de atividades únicas. Com uma arquitetura bem estruturada e endpoints organizados, a API facilita o desenvolvimento de frontends interativos e robustos.
 
 ## 📋 Funcionalidades
 - __CRUD de Usuários:__ Gerenciamento de usuários com endpoints para criar, ler, atualizar e deletar.
@@ -49,3 +49,70 @@ __5.Teste os endpoints:__
 Utilize ferramentas como Postman para testar os endpoints disponíveis.
 ```
 
+## 🌐 Endpoints Disponíveis
+__Usuários__
+- __GET /usuarios:__ Lista todos os usuários.
+- __GET /usuarios/:idUsuario:__ Busca um usuário pelo ID.
+- __POST /usuarios:__ Cria um novo usuário.
+- __DELETE /usuarios/:idUsuario:__ Deleta um usuário.
+
+__Experiências__
+- __GET /experiencias:__ Lista todas as experiências com paginação.
+- __GET /experiencias/searchByLocal?local=:local:__ Busca experiências por local.
+- __GET /experiencias/:idExperiencia:__ Busca uma experiência pelo ID.
+- __POST /experiencias:__ Cria uma nova experiência.
+- __PUT /experiencias/:idExperiencia:__ Atualiza uma experiência existente.
+- __PATCH /experiencias/:idExperiencia:__ Atualiza parcialmente uma experiência.
+- __DELETE /experiencias/:idExperiencia:__ Deleta uma experiência.
+
+__Avaliações__
+- __GET /avaliacoes:__ Lista todas as avaliações.
+- __GET /avaliacoes/:idAvaliacao:__ Busca uma avaliação pelo ID.
+- __POST /avaliacoes:__ Cria uma nova avaliação.
+- __DELETE /avaliacoes/:idAvaliacao:__ Deleta uma avaliação.
+
+__Reservas__
+- __GET /reservas:__ Lista todas as reservas.
+- __GET /reservas/:idReserva:__ Busca uma reserva pelo ID.
+- __POST /reservas:__ Cria uma nova reserva.
+- __DELETE /reservas/:idReserva:__ Deleta uma reserva.
+
+## 📂 Estrutura de Arquivos
+```
+src/
+│
+├── controllers/
+│   ├── usuarioController.js       # Controlador de usuários
+│   ├── experienciaController.js   # Controlador de experiências
+│   ├── avaliacaoController.js     # Controlador de avaliações
+│   └── reservaController.js       # Controlador de reservas
+│
+├── models/
+│   ├── usuarioModel.js            # Model para operações no banco relacionadas a usuários
+│   ├── experienciaModel.js        # Model para operações no banco relacionadas a experiências
+│   ├── avaliacaoModel.js          # Model para operações no banco relacionadas a avaliações
+│   └── reservaModel.js            # Model para operações no banco relacionadas a reservas
+│
+├── services/
+│   ├── usuarioService.js          # Lógica de negócios para usuários
+│   ├── experienciaService.js      # Lógica de negócios para experiências
+│   ├── avaliacaoService.js        # Lógica de negócios para avaliações
+│   └── reservaService.js          # Lógica de negócios para reservas
+│
+├── config/
+│   └── database.js                # Configuração do banco de dados
+│
+├── routes/
+│   ├── usuarioRoutes.js           # Rotas relacionadas a usuários
+│   ├── experienciaRoutes.js       # Rotas relacionadas a experiências
+│   ├── avaliacaoRoutes.js         # Rotas relacionadas a avaliações
+│   └── reservaRoutes.js           # Rotas relacionadas a reservas
+│
+└── app.js                         # Configuração principal do servidor
+```
+
+## 📝 Feito por
+- __Leticia Segurasse__
+- __Miguel Dutra__
+- __Thiago Roncete__
+#
