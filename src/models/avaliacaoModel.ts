@@ -47,3 +47,7 @@ export const validarUsuarioEExperiencia = async (
     experienciaExiste: !!experienciaExiste,
   };
 };
+
+/*Omit<Avaliacao, "idAvaliacao"> cria um tipo que é igual ao tipo Avaliacao, mas sem a propriedade idAvaliacao. 
+Isso é usado porque o idAvaliacao é gerado automaticamente na função com uuidv7(), então não precisa ser fornecido ao chamar a função. 
+Assim, o parâmetro data aceita apenas as outras propriedades de Avaliacao, garantindo clareza e segurança no código.*/
