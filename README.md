@@ -27,7 +27,7 @@ __Passos para executar o projeto__
 
 __1.Clone o repositório:__
 ```
-git clone https://github.com/usuario/API-Reserva.git
+git clone https://github.com/seu-usuario/API-Reserva.git
 cd API-Reserva
 ```
 __2.Instale as dependências:__
