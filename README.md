@@ -27,8 +27,8 @@ __Passos para executar o projeto__
 
 __1.Clone o repositório:__
 ```
-git clone https://github.com/usuario/Rick-and-Morty-API-Backend.git
-cd Rick-and-Morty-API-Backend
+git clone https://github.com/usuario/API-Reserva.git
+cd API-Reserva
 ```
 __2.Instale as dependências:__
 ```
@@ -36,7 +36,14 @@ npm install
 ```
 __3.Configure o banco de dados:__
 ```
-Edite o arquivo src/config/database.js para adicionar as credenciais do seu banco PostgreSQL.
+Crie o arquivo .env para adicionar as credenciais do seu banco PostgreSQL.
+EXEMPLO:
+  DB_HOST=localhost
+  DB_PORT=5432
+  DB_USER=postgres
+  DB_PASSWORD=142536
+  DB_NAME=TrabalhoOFC
+  PORT=3000
 ```
 __4.Inicie o servidor:__
 ```
