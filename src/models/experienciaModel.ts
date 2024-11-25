@@ -63,3 +63,7 @@ export const atualizarExperiencia = async (
 export const deletarExperiencia = async (idExperiencia: string) => {
   await knex("Experiencia").where({ idExperiencia }).del();
 };
+
+/*Omit<Experiencia, "idExperiencia"> cria um tipo que é igual ao tipo Experiencia, mas sem a propriedade idExperiencia. 
+Isso é feito porque o idExperiencia é gerado automaticamente dentro da função usando uuidv7(), então quem chama a função não precisa informar essa propriedade. 
+O parâmetro data aceita apenas as outras propriedades de Experiencia, garantindo que a função seja mais simples e segura de usar.*/
