@@ -47,3 +47,8 @@ export const validarUsuarioEExperiencia = async (
     experienciaExiste: !!experienciaExiste,
   };
 };
+
+/*Omit<Reserva, "idReserva"> cria um tipo baseado no tipo Reserva, mas exclui a propriedade idReserva. 
+Isso é porque o idReserva é gerado automaticamente dentro da função usando uuidv7(). 
+Assim, o parâmetro data só precisa conter as outras propriedades de Reserva, 
+simplificando a chamada da função e garantindo que o idReserva seja tratado internamente, evitando inconsistências ou erros.*/
