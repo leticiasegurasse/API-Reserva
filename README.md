@@ -115,7 +115,7 @@ src/
 ├── utils/
 │    └── normalizeText.ts          # Normalizador de texto
 │
-└── app.js                         # Configuração principal do servidor
+└── app.ts                         # Configuração principal do servidor
 ```
 
 ## 📝 Feito por
