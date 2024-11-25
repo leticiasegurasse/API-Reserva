@@ -32,3 +32,8 @@ export const encontrarUsuarioPorNomeEmail = async (
 export const deletarUsuario = async (idUsuario: string) => {
   await knex("Usuario").where({ idUsuario }).del();
 };
+
+/*Omit<Usuario, "idUsuario"> cria um tipo baseado no tipo Usuario, mas sem a propriedade idUsuario. 
+Isso acontece porque o idUsuario é gerado automaticamente dentro da função usando uuidv7(). 
+Dessa forma, o parâmetro data deve conter apenas as outras propriedades de Usuario, enquanto a função cuida de adicionar o idUsuario, 
+garantindo simplicidade e segurança na criação de usuários.*/
