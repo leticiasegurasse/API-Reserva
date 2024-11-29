@@ -22,6 +22,7 @@ export const criarReserva = async (
   data: Omit<Reserva, "idReserva">
 ): Promise<Reserva> => {
   const idReserva = uuidv7();
+
   await knex("Reserva").insert({ idReserva, ...data });
   return { idReserva, ...data };
 };
@@ -48,7 +49,16 @@ export const validarUsuarioEExperiencia = async (
   };
 };
 
-/*Omit<Reserva, "idReserva"> cria um tipo baseado no tipo Reserva, mas exclui a propriedade idReserva. 
-Isso é porque o idReserva é gerado automaticamente dentro da função usando uuidv7(). 
-Assim, o parâmetro data só precisa conter as outras propriedades de Reserva, 
-simplificando a chamada da função e garantindo que o idReserva seja tratado internamente, evitando inconsistências ou erros.*/
+export const verificarLimiteDeReservas = async (
+  experienciaId: string,
+  dataReserva: string
+): Promise<number> => {
+  const result = await knex("Reserva")
+    .where({ experienciaId })
+    .andWhere("dataReserva", dataReserva)
+    .count("idReserva as total")
+    .first();
+
+  const total = result?.total ? parseInt(result.total as string, 10) : 0;
+  return total;
+};
