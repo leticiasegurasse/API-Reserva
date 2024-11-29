@@ -33,6 +33,7 @@ export const obterReservaPorId = async (req: Request, res: Response) => {
 
 export const criarReserva = async (req: Request, res: Response) => {
   const { usuarioId, experienciaId, dataReserva } = req.body;
+
   try {
     const novaReserva = await reservaService.criarReserva({
       usuarioId,
@@ -54,6 +55,9 @@ export const criarReserva = async (req: Request, res: Response) => {
         ? 400
         : errorMessage ===
           "Experiência inexistente, não foi possível criar a reserva."
+        ? 400
+        : errorMessage ===
+          "Já existem 2 reservas para esta experiência na data selecionada. Por favor, selecione outra data."
         ? 400
         : 500;
     res.status(statusCode).json({ message: errorMessage });
