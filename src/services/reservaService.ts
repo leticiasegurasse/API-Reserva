@@ -47,6 +47,17 @@ export const criarReserva = async (data: {
     );
   }
 
+  const limiteReservas = await reservaModel.verificarLimiteDeReservas(
+    data.experienciaId,
+    data.dataReserva
+  );
+
+  if (limiteReservas >= 2) {
+    throw new Error(
+      "Já existem 2 reservas para esta experiência na data selecionada. Por favor, selecione outra data."
+    );
+  }
+
   return await reservaModel.criarReserva(data);
 };
 
